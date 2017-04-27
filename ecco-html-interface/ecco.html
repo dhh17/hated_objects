@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="https://vm0542.kaj.pouta.csc.fi/">
+    <title>ECCO interface</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+</head>
+<body>
+<div class="container">
+
+<h1>ECCO API</h1>
+
+<h2>Text search</h2>
+<form action="/ecco_octavo_api/search" method="get">
+<fieldset>
+<label for="squery">query</label>
+<input id="squery" type="text" name="query" value="luxury">
+<label for="slimit">limit</label>
+<input id="slimit" type="text" name="limit" value="100">
+<input type="hidden" name="returnMatches">
+<input type="hidden" name="pretty">
+<input type="hidden" name="field" value="ESTCID">
+<input type="hidden" name="field" value="fullTitle">
+<input type="submit">
+</fieldset>
+</form>
+
+<h2>Collocation search</h2>
+<form action="/ecco_octavo_api/collocations" method="get">
+<fieldset>
+<label for="cquery">query</label>
+<input id="cquery" type="text" name="query" value="porcelain">
+<label for="climit">limit</label>
+<input id="climit" type="text" name="limit" value="500">
+<input type="hidden" name="pretty">
+<input type="hidden" name="localScaling" value="ABSOLUTE">
+<input type="hidden" name="maxTotalTermFreq" value="5000000">
+<input type="hidden" name="minTotalTermFreq" value="10000">
+<input type="hidden" name="timeout" value="-1">
+<input type="submit">
+</fieldset>
+</form>
+
+</div>
+</body>
+</html>
