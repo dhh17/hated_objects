@@ -8,7 +8,7 @@ import re
 Y1 = 1700
 Y2 = 1800
 YEARS = 10
-TOP = 0.05
+TOP = 0.01
 
 RANGES = list(range(Y1, Y2-YEARS+1))
 
