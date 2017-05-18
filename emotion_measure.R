@@ -48,7 +48,7 @@ get_tokenlist <- function(search_results) {
 }
 
 
-get_termlist <- function(datafile = "../data/emotions.csv") {
+get_termlist <- function(datafile = "data/emotions.csv") {
   termlist <- read.csv(datafile)
   termlist$emotion <- as.character(termlist$term)
   termlist$strength_abs <- abs(termlist$score)
@@ -89,7 +89,7 @@ get_wordhitlist <- function(tokenlist, termlist) {
 query_word <- "forest"
 search_results <- get_search_results_for_term(query_word)
 tokenlist <- get_tokenlist(search_results)
-termlist <- get_termlist(datafile = "../data/emotions.csv")
+termlist <- get_termlist(datafile = "data/medicalterms.csv")
 wordhitlist <- get_wordhitlist(tokenlist, termlist)
 
 paragraph_weights <- search_results
