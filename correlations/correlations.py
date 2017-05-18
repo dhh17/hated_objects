@@ -139,6 +139,10 @@ def main():
     for mw in MED:
         for ow in OBJ:
             c.analyse2('med', mw, 'object', ow)
+    for w1 in OBJ:
+        for w2 in OBJ:
+            if w1 < w2:
+                c.analyse2('object', w1, 'object', w2)
     c.dump('datafiles/correlation.json')
 
 main()
