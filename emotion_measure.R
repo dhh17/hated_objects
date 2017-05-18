@@ -87,11 +87,15 @@ get_wordhitlist <- function(tokenlist, termlist) {
 # emotion_list$emotion <- as.character(emotion_list$term)
 # emotion_list$strength_abs <- abs(emotion_list$score)
 
-query_word <- "teapot"
+query_word <- "music"
+print(paste0("querying for: ", query_word))
 search_results <- get_search_results_for_term(query_word)
 tokenlist <- get_tokenlist(search_results)
+print(paste0("querying for: ", query_word))
 termlist <- get_termlist(datafile = "data/medicalterms.csv")
+print(paste0("querying for: ", query_word))
 wordhitlist <- get_wordhitlist(tokenlist, termlist)
+print(paste0("querying for: ", query_word))
 
 paragraph_weights <- search_results
 paragraph_weights$hits <- wordhitlist
