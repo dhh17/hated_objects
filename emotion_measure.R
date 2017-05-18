@@ -79,6 +79,7 @@ get_wordhitlist <- function(tokenlist, termlist) {
       print(ntokens)
     }
   }
+  return(wordhitlist)
 }
 
 
@@ -86,7 +87,7 @@ get_wordhitlist <- function(tokenlist, termlist) {
 # emotion_list$emotion <- as.character(emotion_list$term)
 # emotion_list$strength_abs <- abs(emotion_list$score)
 
-query_word <- "forest"
+query_word <- "teapot"
 search_results <- get_search_results_for_term(query_word)
 tokenlist <- get_tokenlist(search_results)
 termlist <- get_termlist(datafile = "data/medicalterms.csv")
@@ -101,6 +102,3 @@ paragraph_weights_ordered <- paragraph_weights[with(paragraph_weights, order(-hi
 write.csv(x = paragraph_weights_ordered,
           file = paste0("output/", query_word, "_medicality.csv"),
           row.names = FALSE)
-
-# ecco_lengths <- ecco_metadata[, c("ESTCID","documentLength", "totalParagraphs", "totalPages")]
-# write.csv(ecco_lengths, "output/ecco_lengths.csv")
